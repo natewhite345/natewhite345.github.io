@@ -189,7 +189,7 @@
     <link defer rel="shortcut icon" href="http://simpleanswers.dx.am/favicon.ico" type="image/x-icon" />
     <link defer rel="icon" href="http://simpleanswers.dx.am/favicon.ico" type="image/x-icon" />
     <title><?php echo $pageinfo['title']?></title>
-        <title>Test</title>
+        <title>Test2</title>
     <?php 
     echo "<script type='text/javascript'>
             function resetnav(){
