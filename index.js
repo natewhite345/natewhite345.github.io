@@ -17,21 +17,18 @@ const viewerConfig = {
     showDownloadPDF: false,
     showBookmarks: false,
     showThumbnails: false,
-    showZoomControl: false,
+    showZoomControl: true,
     showAnnotationTools:false,
     showFullScreen: false,
-    
-    //embedMode: "IN_LINE"
+    //embedMode: "SIZED_CONTAINER"
 };
 
-/* Wait for Adobe Acrobat Services PDF Embed API to be ready */
-document.addEventListener("adobe_dc_view_sdk.ready", function () {
-    /* Initialize the AdobeDC View object */
+function setupPDF(id,link,filename){
     var adobeDCView = new AdobeDC.View({
         /* Pass your registered client id */
         clientId: "cbf93b9f52154aa78547446e15db69aa",
         /* Pass the div id in which PDF should be rendered */
-        divId: "adobe-dc-view",
+        divId: id,
     });
 
     /* Invoke the file preview API on Adobe DC View object */
@@ -40,11 +37,14 @@ document.addEventListener("adobe_dc_view_sdk.ready", function () {
         content: {
             /* Location of file where it is hosted */
             location: {
-                url: "https://raw.githubusercontent.com/natetheadequate/resumes/HEAD/White_Nathaniel_Resume.pdf",
+                url: link,
                 // headers: [
                 //     {
                 //         key: "Content-Security-Policy",
-                //         value: "unsafe-inline"
+                //         value: "style-src 'self' 'unsafe-inline'"
+                //     },{
+                //         key: "origin",
+                //         value: "natetheadequate.github.io"
                 //     }
                 // ]
                 /*
@@ -61,7 +61,18 @@ document.addEventListener("adobe_dc_view_sdk.ready", function () {
         /* Pass meta data of file */
         metaData: {
             /* file name */
-            fileName: "Nathaniel White Resume.pdf"
+            fileName: filename+".pdf"
         }
     }, viewerConfig);
+    setTimeout(()=>{
+        document.getElementById(id).style.height = "175vh"
+    },3000)
+}
+
+/* Wait for Adobe Acrobat Services PDF Embed API to be ready */
+document.addEventListener("adobe_dc_view_sdk.ready", function () {
+    setupPDF("resume-div","https://raw.githubusercontent.com/natetheadequate/resumes/HEAD/White_Nathaniel_Resume.pdf","Resume")
+    setupPDF("transcript-div","https://natetheadequate.github.io/Academic_Transcript.pdf","Transcript")
+    setTimeout(()=>scrollTo(0,0),3000)
 });
+document.addEventListener("adobe_dc_view_sdk")

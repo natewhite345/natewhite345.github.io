@@ -1,4 +1,4 @@
-<script src="https://mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
+<script src="//pdfjs/build/pdf.mjs" type="module"></script>
 
 <script type="module">
   // If absolute URL from the remote server is provided, configure the CORS
@@ -9,7 +9,7 @@
   var { pdfjsLib } = globalThis;
 
   // The workerSrc property shall be specified.
-  pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.mjs';
+  //pdfjsLib.GlobalWorkerOptions.workerSrc = "//pdfjs/build/pdf.mjs";
 
   // Asynchronous download of PDF
   var loadingTask = pdfjsLib.getDocument(url);
