@@ -69,7 +69,7 @@ function setupPDF(id,link,filename,height){
 
 /* Wait for Adobe Acrobat Services PDF Embed API to be ready */
 document.addEventListener("adobe_dc_view_sdk.ready", function () {
-    setupPDF("resume-div","https://raw.githubusercontent.com/natetheadequate/resumes/HEAD/White_Nathaniel_Resume.pdf","Resume","100vw")
+    setupPDF("resume-div","https://natetheadequate.github.io/White_Nathaniel_Resume.pdf","Resume","100vw")
     setupPDF("transcript-div","https://natetheadequate.github.io/Academic_Transcript.pdf","Transcript","600vw")
     setTimeout(()=>scrollTo(0,0),3000)
 });
