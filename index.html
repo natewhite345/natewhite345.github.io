@@ -13,22 +13,33 @@
                 margin-right: 15%;
             }
         } */
+        :root {
+            --pdf-display: hidden
+        }
         .pdf-div {
                 margin-left: max(0px, calc(20% - 150px));
                 margin-right: max(0px, calc(20% - 150px));
+                visibility: var(--pdf-display);
+                /*display:var(--pdf-display)*/
             }
         .pdf-header {
             text-align: center;
+            visibility: var(--pdf-display);
+            /*display: var(--pdf-display)*/
         }
     </style>
 </head>
 <body style="margin: 0px;background-color: burlywood;">
     <div style="padding: 5px min(40px, 2%)">
         <h1>Nate White | Scientific Software Engineer | Boston, MA</h1>
-        <i>Seeking new-grad positions starting May 2025</i>
+        <i>Seeking new-grad positions starting May 2025</i><br><br>
+        <a href="https://github.com/natetheadequate">Github</a>
+        <a href="https://linkedin.com/in/natetheadequate">LinkedIn</a>
+        <a href="mailto:natewhite345@gmail.com">Email</a>
     </div>
     
     <hr>
+    <p style="text-align: center;" id="loading">Loading resume and transcript ...</p>
     <h2 class="pdf-header">Resume</h2>
     <div id="resume-div" class="pdf-div"></div>
     <h2 class="pdf-header">Transcript</h2>

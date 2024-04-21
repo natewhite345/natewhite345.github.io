@@ -64,13 +64,17 @@ function setupPDF(id,link,filename,height){
     }, viewerConfig);
     setTimeout(()=>{
         document.getElementById(id).style.height = height
-    },3000)
+        console.log("setting height")
+    },2000)
 }
 
 /* Wait for Adobe Acrobat Services PDF Embed API to be ready */
 document.addEventListener("adobe_dc_view_sdk.ready", function () {
     setupPDF("resume-div","https://natetheadequate.github.io/White_Nathaniel_Resume.pdf","Resume","100vw")
     setupPDF("transcript-div","https://natetheadequate.github.io/Academic_Transcript.pdf","Transcript","600vw")
-    setTimeout(()=>scrollTo(0,0),3000)
+    setTimeout(()=>{
+        document.querySelector(":root").style.setProperty('--pdf-display',"visible");
+        document.getElementById("loading").style.setProperty("display","none")
+        scrollTo(0,0);console.log("making visibale")},3000)
 });
 document.addEventListener("adobe_dc_view_sdk")
