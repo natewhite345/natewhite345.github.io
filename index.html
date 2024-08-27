@@ -29,12 +29,15 @@
             /*display: var(--pdf-display)*/
         }
     </style>
+    <script>
+        fetch("last-updated.txt").then(res=>res.text()).then(txt => document.getElementById("last-updated").innerHTML = txt)
+    </script>
 </head>
 <body style="margin: 0px;background-color: burlywood;">
     <div style="padding: 5px min(40px, 2%)">
         <h1>Nate White | Scientific Software Engineer | Boston, MA</h1>
         <i>Seeking new-grad positions starting May 2025</i><br>
-        <p>Last updated: Aug 23, 2024</p>
+        <p>Last updated: <span id="last-updated"></span></p>
     </div>
     
     <hr>
