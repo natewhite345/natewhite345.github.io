@@ -32,7 +32,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Update last updated date
-        run: date > last-updated.txt
+        run: TZ=America/New_York date > last-updated.txt
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
