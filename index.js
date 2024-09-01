@@ -70,8 +70,8 @@ function setupPDF(id,link,filename,height){
 
 /* Wait for Adobe Acrobat Services PDF Embed API to be ready */
 document.addEventListener("adobe_dc_view_sdk.ready", function () {
-    setupPDF("resume-div", BASE_URL+"White_Nathaniel_Resume.pdf","Resume","100vw")
-    setupPDF("transcript-div",BASE_URL+"Academic_Transcript.pdf","Transcript","600vw")
+    setupPDF("resume-div", BASE_URL+"White_Nathaniel_Resume.pdf","White_Nathaniel_Resume","100vw")
+    setupPDF("transcript-div",BASE_URL+"Academic_Transcript.pdf","White_Nathaniel_Transcript","600vw")
     setTimeout(()=>{
         document.querySelector(":root").style.setProperty('--pdf-display',"visible");
         document.getElementById("loading").style.setProperty("display","none")
