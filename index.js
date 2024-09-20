@@ -56,6 +56,13 @@ function showPdf(filename) {
     });
 }
 
+function resizeViewerWindow(){
+    /**
+     * Resizes the viewer window to have a height roughly equivalent to one page, assuming the view mode is FIT_WIDTH
+     */
+    document.getElementById("adobe-dc-view").style.height = 1.2*+getComputedStyle(document.getElementById("adobe-dc-view")).width.replace("px","")+"px"
+}
+
 /* Wait for Adobe Acrobat Services PDF Embed API to be ready */
 document.addEventListener("adobe_dc_view_sdk.ready", function () {
     const resTab = document.getElementById("resume-tab");
@@ -76,6 +83,8 @@ document.addEventListener("adobe_dc_view_sdk.ready", function () {
         setTimeout(() => document.getElementById("tooltip-toast").classList.remove("show"), 4000)
     }
     document.getElementById("resume-tab").classList.add("active-tab");
+    resizeViewerWindow();
+    window.addEventListener("resize",()=>resizeViewerWindow())
 });
 
 fetch("last-updated.txt").then(res=>res.text()).then(txt => document.getElementById("last-updated").innerHTML = txt)
