@@ -77,3 +77,5 @@ document.addEventListener("adobe_dc_view_sdk.ready", function () {
     }
     document.getElementById("resume-tab").classList.add("active-tab");
 });
+
+fetch("last-updated.txt").then(res=>res.text()).then(txt => document.getElementById("last-updated").innerHTML = txt)
