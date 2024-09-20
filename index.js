@@ -80,7 +80,7 @@ document.addEventListener("adobe_dc_view_sdk.ready", function () {
     showPdf("White_Nathaniel_Resume.pdf");
     if (!isMobile) {
         document.getElementById("tooltip-toast").classList.add("show")
-        setTimeout(() => document.getElementById("tooltip-toast").classList.remove("show"), 4000)
+        setTimeout(() => document.getElementById("tooltip-toast").classList.remove("show"), 3000)
     }
     document.getElementById("resume-tab").classList.add("active-tab");
     resizeViewerWindow();
