@@ -54,6 +54,27 @@
         .tab>a:hover {
             color: #87adde
         }
+        .toast {
+            position: absolute;
+            height: 0;
+            width: 0;
+        }
+        .toast-inner {
+            background-color: #333;
+            color: #fff;
+            position: relative;
+            border-radius: 4px;
+            padding: 10px 20px;
+            min-width: max-content;
+            transition: left 0.5s ease-in-out;
+            bottom: -30px;
+            left: -400px;
+        }
+
+        /* Position the toast at the bottom of the screen when visible */
+        .toast-inner.show{
+            left: 10px;
+        }
         footer>a{
             text-align: center;
             padding: 5px;
@@ -91,8 +112,10 @@
                 </svg>
             </a>
         </span>
+        <div class="toast"><div id="tooltip-toast" class="toast-inner">Hover over classes for tooltips</div></div>
     </header>
     <main id="adobe-dc-view"></main>
+    <div id="tooltip-toast" class="toast"><div class="toast-inner">Hover over classes for tooltips</div></div>
     <footer><a onclick="window.scrollTo({top:0, behavior:'smooth'})">Go to top</a></footer>
     <script type="text/javascript" src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
 </body>

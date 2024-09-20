@@ -10,16 +10,7 @@ written permission of Adobe.
 */
 
 /* Control the default view mode */
-const viewerConfig = {
-    /* Allowed possible values are "FIT_PAGE", "FIT_WIDTH", "TWO_COLUMN", "TWO_COLUMN_FIT_PAGE" or "". */
-    showDownloadPDF: true,
-    focusOnRendering: false,
-    includePDFAnnotations: true,
-    showThumbnails: false,
-    showAnnotationTools: false,
-    defaultViewMode: "FIT_WIDTH",
-
-};
+const isMobile = window.innerWidth < 800
 
 function showPdf(filename) {
     /* Initialize the AdobeDC View object */
@@ -53,7 +44,16 @@ function showPdf(filename) {
             /* file name */
             fileName: filename
         }
-    }, {...viewerConfig,embedMode:+window.innerWidth < 800 ? "IN_LINE": ""});
+    }, {
+        /* Allowed possible values are "FIT_PAGE", "FIT_WIDTH", "TWO_COLUMN", "TWO_COLUMN_FIT_PAGE" or "". */
+        showDownloadPDF: true,
+        focusOnRendering: false,
+        includePDFAnnotations: true,
+        showThumbnails: false,
+        showAnnotationTools: false,
+        defaultViewMode: "FIT_WIDTH",
+        embedMode: isMobile ? "IN_LINE" : "" // Inline mode doesn't support tooltips, but looks nicer because it uses the full width with no side menus and doesn't have its own scrollbar. On desktop, we don't opt for this so the tooltips are supported, but on mobile tooltips are irrelevant anyways and it is more important to make the best use of space possible.
+    });
 }
 
 /* Wait for Adobe Acrobat Services PDF Embed API to be ready */
@@ -71,5 +71,9 @@ document.addEventListener("adobe_dc_view_sdk.ready", function () {
         showPdf("White_Nathaniel_Transcript.pdf");
     })
     showPdf("White_Nathaniel_Resume.pdf");
+    if (!isMobile) {
+        document.getElementById("tooltip-toast").classList.add("show")
+        setTimeout(() => document.getElementById("tooltip-toast").classList.remove("show"), 4000)
+    }
     document.getElementById("resume-tab").classList.add("active-tab");
 });
