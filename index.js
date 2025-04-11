@@ -16,7 +16,7 @@ function showPdf(filename) {
     /* Initialize the AdobeDC View object */
     var adobeDCView = new AdobeDC.View({
         /* Pass your registered client id */
-        clientId: window.location.hostname === "localhost" ? "ae205f81948145e0a35fd86a2d6891b9" : "cbf93b9f52154aa78547446e15db69aa",
+        clientId: window.location.hostname === "localhost" ? "ae205f81948145e0a35fd86a2d6891b9" : "6542fd00cade4e538defdabc4de706dd",
         /* Pass the div id in which PDF should be rendered */
         divId: "adobe-dc-view",
     });
