@@ -25,6 +25,7 @@
 \usepackage{dashrule}
 \usepackage{mathtools}
 \usepackage{fbox}
+\usepackage{multirow}
 
 \input{glyphtounicode}
 
@@ -138,7 +139,8 @@
 \newcommand{\myemail}{natewhite345@gmail.com}
 \newcommand{\link}[2]{\color{cyan}{\underline{\href{#1}{#2}}}}
 \newcommand{\headingcap}[1]{\space $|$\space \space \textit{#1}}
-\newcommand{\ghlink}[1]{\href{https://www.github.com/natewhite345/#1}{
+\newcommand{\ghurl}[1]{https://www.github.com/natewhite345/#1}
+\newcommand{\ghlink}[1]{\href{\ghurl{#1}}{
 \faIcon{github}/#1}}
 \newcommand{\ttull}[2]{\bgroup\markoverwith{\textcolor{cyan}{\hdashrule[-0.8ex]{1mm}{2.1pt}{1pt}}}\ULon{\href{#2}{#1}}}
 \newcommand{\ttul}[1]{\bgroup\markoverwith{\textcolor{gray}{\hdashrule[-0.7ex][x]{1mm}{0.5pt}{0.5mm}}}\ULon{#1}}
@@ -149,25 +151,35 @@
 %----------HEADING-----------------
 
 \noindent % No indentation for the line
+
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X
+                              >{\centering\arraybackslash}X
+                              >{\raggedleft\arraybackslash}X}
 \href{https://www.linkedin.com/in/natewhite345}{\color{ProcessBlue}{\faIcon{linkedin}}} \href{https://www.github.com/natewhite345}{\color{ProcessBlue}{\faIcon{github}}}/natewhite345\hfill 
-\makebox[0pt][c]{\href{https://natewhite345.github.io}{\color{ProcessBlue}{\faIcon{home}\ \ \ }}}
-\textbf{\underline{\LARGE Nathaniel White}} \href{https://orcid.org/0009-0009-0589-4481}{\color{ProcessBlue}{\faIcon{orcid}}}\hfill 
-\phantom{fffffffffffffffffffffffffffffffffff}
-\vspace*{-20px}
-\begin{flushright}
-\href{mailto:\myemail}{\myemail}\\ \href{tel:
-+016173470084}{(617) 347-0084}
-\end{flushright}
-\vspace*{-30pt}
+& \multirow[c]{2}{*}{\makebox[0pt][c]{\href{https://natewhite345.github.io}{\color{ProcessBlue}{\faIcon{home}\ \ \ }}}
+\textbf{\LARGE Nathaniel White} \href{https://orcid.org/0009-0009-0589-4481}{\color{ProcessBlue}{\faIcon{orcid}}} }
+& \href{mailto:\myemail}{\myemail}     \\
+Boston, MA      
+&     & \href{tel:
++016173470084}{(617) 347-0084} 
+\end{tabularx}
+
 %-----------EDUCATION-----------------
 \section{Education}
   \resumeSubHeadingListStart
-     \resumeSubheadingSummary{Northeastern University \normalfont{$|$ Khoury College of Computer Sciences $|$ Honors}}{Boston, MA}{\BeginAccSupp{method=plain,ActualText={Candidate for a Bachelor of Science in Computer Science and Mathematics}}Candidate, B.\,S. Computer Science \& Mathematics\EndAccSupp{}\summarysep{} Physics \& Chemistry Minor \summarysep{} 3.79 GPA}{2021 -- May 2025}
+     \resumeSubheadingSummary{Northeastern University \normalfont{$|$ Khoury College of Computer Sciences $|$ Honors}}{Boston, MA}{\BeginAccSupp{method=plain,ActualText={Bachelor of Science in Computer Science and Mathematics}}B.\,S. Computer Science \& Mathematics\EndAccSupp{}\summarysep{} Physics \& Chemistry Minor \summarysep{} 3.79 GPA}{2021 -- 2025}
    \resumeSubHeadingListEnd
 
-  \section{Research and Work \small\headingcap{* $=$ Part-Time, $^\dag=$ Under Non-Disclosure Agreement}}
+  \section{Work Experience}
+  
   \resumeSubHeadingListStart
-  \resumeSubheadingThin{Computational Protein Design Co-op @ Tessera Therapeutics$^\dag$}{Jan. 2024 -- June 2024}{Gene Therapy}
+  \resumeSubheadingThin{Associate Software Engineer @ Fidelity Investments}{June 2025 -- Present}{Fund \& Investment Operations}
+  \resumeItemListStart
+  \resumeBullet{Developed applications using Typescript/Angular, Java/SpringBoot, SQL, gand AWS.}
+  \resumeBullet{Introduced static nullness checks and Lombok codegen to make code more readable \& safer.}
+  \resumeBullet{Followed Test-Driven Development with tools like Jasmine, Cypress, and JUnit.}
+  \resumeItemListEnd
+  \resumeSubheadingThin{Computational Protein Design Co-op @ Tessera Therapeutics}{Jan. 2024 -- June 2024}{Gene Therapy}
   \resumeItemListStart
   \resumeBullet{Used statistical techniques to test biological hypothesis from protein engineering data.}
   \resumeBullet{Built an internal web app to expedite and democratize protein design analysis using Flask and Plotly.}
@@ -175,47 +187,46 @@
   \resumeItemListEnd
   \resumeSubheadingThin{Software Engineering Co-op @ Nth Cycle}{Jan. 2023 -- June 2023}{Metal Refining Startup}
   \resumeItemListStart
-  \resumeBullet{Identified problems with data capture and analysis such as manually transcribing pdfs, siloed data analysis procedures, nonstandardized datasheets, and exclusively using Excel/paper. Designed and implemented a webapp (see LUCAS project) which used drag-and-drop libraries and MongoDB for a no-code solution. }
+  \resumeBullet{Designed and implemented a React webapp (see \ghlink{lucas-demo-screenshots}) which used a  \href{
+  https://developers.google.com/blockly}{drag and drop library} for no-code design of forms, pipelines, and charts. Deployed to MongoDB Atlas and Microsoft Azure.}
+
   \resumeBullet{Fixed problems with internet, printers, laptops, AzureVPN and Remote Desktop in lieu of an IT department.}
   \resumeItemListEnd
-  \resumeSubheadingThin{Peer Tutoring\normalfont{*}}{Sep. 2022 -- June 2023}{Discrete, Fundies 1 \& 2, OOD, Algo, Phys 2, Calc 3, LinAlg, Prob \& Stats}
+  \resumeSubheadingThin{Peer Tutoring}{Sep. 2022 -- June 2023}{Discrete, CS 1 \& 2, OOD, Algo, Phys 2, Calc 3, LinAlg, Prob \& Stats}
   \resumeItemListStart
-    \resumeBullet{Demonstrate patience and professionalism with tutees having a variety of skill levels. 164 hours total $\approx$ 4 hrs/wk}
+    \resumeBullet{Demonstrate patience and professionalism with tutees having a variety of skill levels.} 
+    \resumeBullet{164 hours total $\approx$ 4 hrs/wk.}
   \resumeItemListEnd
-  \resumeSubheadingThin{Sijia Dong Lab\normalfont{*}}{Dec. 2021 -- Jan. 2023}{Computational
-  chemistry research group} \resumeItemListStart \resumeBullet{Used automation scripts and ML to investigate ligand-protein binding.}
+  \resumeSubheadingThin{Sijia Dong Lab}{Dec. 2021 -- Jan. 2023}{Computational
+  chemistry research group} \resumeItemListStart 
+  \resumeBullet{\href{
+  \ghurl{automated_docking_script}}{\faIcon{link}} Designed a QtPy GUI and script to autogenerate protein-ligand docking poses in Schrodinger Maestro. }
+  \resumeBullet{\href{https://doi.org/10.26434/chemrxiv-2024-cjs5j}{\faIcon{link}} Used Bash, MATLAB, Python, and TensorFlow to transform molecular coordinates into a normalized form using matrix manipulations for use in an explainable AI model to understand how different ligands influence the excitation wavelengths and strengths in different docking poses.}
 \resumeItemListEnd
-  \resumeSubheadingThin{Northeastern Undergrad Computer Architecture Research Group\normalfont{*}}{Nov. 2021 -- May 2022}{} \resumeItemListStart \resumeBullet{Learned C and beginner CUDA through programming challenges given by Prof. Kaeli.}
-  \resumeItemListEnd
-  \resumeSubheadingThin{Internship with Town of Holliston Director of Technology\normalfont{*}}{Nov. 2020 -- Feb. 2021, Apr. 2021 -- May 2021}{}
+  \resumeSubheadingThin{Internship with Town of Holliston Director of Technology}{Nov. 2020 -- Feb. 2021, Apr. 2021 -- May 2021}{}
   \resumeItemListStart
     \resumeBullet{Setup and resolve problems with phones, printers, desktops, software, and file storage for municipal departments.}
   \resumeItemListEnd \resumeSubHeadingListEnd
-  \section{Courses and Tech Stack \small\headingcap{* $=$ In progress/learning, $^\dag=$ Included lab portion}}
+  \section{Courses and Tech Stack}
   \resumeSubHeadingListStart
   \resumeSubItem{Tech}{
-    \ctt{Javascript/Typescript}{Language of major project I authored at Nth Cycle (LUCAS). JavaScript is the first programming language I learned and the language I am most proficient in. I completed a third of my Software Development class in Typescript before the teams were reshuffled and I had to switch to Java.}, 
-    \ctt{React}{6 months professional experience from Nth Cycle as well as the Grave Finder project from high school.},
+    \ctt{JavaScript/TypeScript (Angular/React)}{Authored major project at Nth Cycle (LUCAS) in React. Fidelity uses Angular. I completed a third of my Software Development class in Typescript before the teams were reshuffled.},
+    \ctt{Java/Kotlin}{Two semesters of core CS classes taught in Java, and I completed 2/3 of my Software Dev class in Java. Would be very excited to work in Kotlin.}, 
     \ctt{Python}{Used for scientific computing at Tessera (including the Plotly and Dash libraries) and the Sijia Dong Lab, as well as part of Networks class.}, 
-    \ctt{MongoDB}{Made extensive use of MongoDB aggregations on my first co-op (See LUCAS project).}, 
-    \ctt{Java}{Two semesters of core CS classes taught in Java, and I completed 2/3 of my Software Dev class in Java. Would be very excited to work in Kotlin.}, 
-    \ctt{Lean4}{Undoubtedly the most esoteric language on this list, LEAN is a pure functional language similar to Rocq (formerly Coq) which is based on the Calculus of Inductive Constructions and the notion of theorems as functions and propositions as types (Curry-Howard Correspondence). This means properties of programs can be formally verified, allowing for the development of high-assurance code, and one day maybe even practical use.},
-    \ctt{Bash}{Used in the Dong Lab extensively, and as part of my everyday life as a Linux user.},
-    \ctt{Linux}{Daily driver since high school. Also used in the context of HPC and developing on WSL at work.},
-    \ctt{C}{Used as a part of NUCAR.},
-    \ctt{Mathematica}{Learned to overcome its flaws to be able to complete homeworks in Modern Physics and Physical Chemistry without making math errors inherent with hand calculations.},
-    \ctt{Rust*}{Almost entirely through the Rust book. I greatly enjoyed programming in Lean, which is basically a language that is \textit{just} a type system, but it will be nice to have a language like that which has practical application and a developed ecosystem.}
-  }
+    \ctt{Lean4}{Undoubtedly the most esoteric language on this list, LEAN is a pure functional language similar to Rocq (formerly Coq) which is based on the Calculus of Inductive Constructions and dependent type theory. A fundamental conclusion of dependent type theory is the Curry-Howard correspondence, which equates theorems to functions and propositions to types. This means properties of programs can be formally verified, allowing for the development of high-assurance code, and one day maybe even practical use.},
+    \ctt{Bash/Linux/SLURM}{Used in the Dong Lab extensively, and as part of my everyday life as a Linux user.},
+    \ctt{Racket}{Took a class on DSLs in Racket, as well as first-year CS},
+    \ctt{Rust}{Almost entirely through the Rust book. I greatly enjoyed programming in Lean, which is basically a language that is \textit{just} a type system, but it will be nice to have a language like that which has practical application and a developed ecosystem.}}
     \resumeSubItem{CS}
       {
-        \ctt{AI}{CS 4100: "Introduces the fundamental problems, theories, and algorithms of the artificial intelligence field. Includes heuristic search; knowledge representation using predicate calculus; automated deduction and its applications; planning; and machine learning. Additional topics include game playing; uncertain reasoning and expert systems; natural language processing; logic for common-sense reasoning; ontologies; and multiagent systems." },
         \ctt{Software Dev}{CS 4500: This is generally considered to be the hardest CS class at Northeastern University. It consists of a semester-long software project to be completed by pair programming. Partners and codebases are changed at two points during the semester to simulate the workplace. Lectures consist of students presenting their code, with other students functioning as a panel to interrogate and question design decisions. The class centers around effective, concise, and direct professional communication as much as managing a large codebase. },
+        \ctt{AI}{CS 4100: "Introduces the fundamental problems, theories, and algorithms of the artificial intelligence field. Includes heuristic search; knowledge representation using predicate calculus; automated deduction and its applications; planning; and machine learning. Additional topics include game playing; uncertain reasoning and expert systems; natural language processing; logic for common-sense reasoning; ontologies; and multiagent systems." },
         \ctt{Networks \& Distributed Systems}{CS 3700: Projects included making a wordle guesser, FTP Client \& Server, Web Scraper, BGP implementation, TCP implemenation, and RAFT (Distibuted Key-Value protocol) implementation. I wrote the first three in Python, the Course website public at 3700.network}, 
         \ctt{Object Oriented Design}{CS 3500: Made two multi-week projects in Java: An implementation of a marble solitaire game and an image manipulator. Source code available on request; not posted publicly for academic integrity reasons.},\
         \ctt{Logic \& Computation}{CS 2800: Uses LEAN to prove termination, correctness, and safety of programs. Discusses notations used in logic, propositional and first order logic, logical inference, mathematical induction, and structural induction. }
       }
     \resumeSubItem{Math}{
-      \ctt{PDEs*}{MATH 4545: Fourier Series and PDEs, "Provides a first course in Fourier series, Sturm-Liouville boundary value problems, and their application to solving the fundamental partial differential equations of mathematical physics: the heat equation, the wave equation, and Laplace's equation. Green's' functions are also introduced as a means of obtaining closed-form solutions."},
+      \ctt{PDEs}{MATH 4545: Fourier Series and PDEs, "Provides a first course in Fourier series, Sturm-Liouville boundary value problems, and their application to solving the fundamental partial differential equations of mathematical physics: the heat equation, the wave equation, and Laplace's equation. Green's' functions are also introduced as a means of obtaining closed-form solutions."},
       \ctt{Statistics \& Stochastic Processes}
       {MATH 4581: The first part of the course covers classical procedures of statistics including the t-test, linear regression, and the chi-square test. The second part provides an introduction to stochastic processes with emphasis on Markov chains, random walks, and Brownian motion, with applications to modeling and finance. As a prerequisite, I took Probability and Statistics (MATH 3081), which covered sample space; conditional probability and independence; discrete and continuous probability distributions for one and for several random variables; expectation; variance; special distributions including binomial, Poisson, and normal distributions; law of large numbers; and central limit theorem. Also introduces basic statistical theory including estimation of parameters, confidence intervals, and hypothesis testing. }, 
       \ctt{Linear Algebra}{MATH 2331: "Uses the Gauss-Jordan elimination algorithm to analyze and find bases for subspaces such as the image and kernel of a linear transformation. Covers the geometry of linear transformations: orthogonality, the Gram-Schmidt process, rotation matrices, and least squares fit. Examines diagonalization and similarity, and the spectral theorem and the singular value decomposition." }, 
@@ -225,51 +236,34 @@
     }
     \resumeSubItem{Chemistry}
     {
-      \ctt{Organic Chemistry 1$^\dag$ \& 2$^\dag$}{Non-chemistry major section primarily intended as preparation for the organic chemistry portion of the MCAT. CHEM 2311: "Introduces nomenclature, preparation, properties, stereochemistry, and reactions of common organic compounds. Presents correlations between the structure of organic compounds and their physical and chemical properties, and mechanistic interpretation of organic reactions. Includes chemistry of hydrocarbons and their functional derivatives."
+      \ctt{Organic Chemistry 1 \& 2}{Non-chemistry major section primarily intended as preparation for the organic chemistry portion of the MCAT. CHEM 2311: "Introduces nomenclature, preparation, properties, stereochemistry, and reactions of common organic compounds. Presents correlations between the structure of organic compounds and their physical and chemical properties, and mechanistic interpretation of organic reactions. Includes chemistry of hydrocarbons and their functional derivatives."
       CHEM 2312: "Introduces basic laboratory techniques, such as distillation, crystallization, extraction, chromatography, characterization by physical methods, and measurement of optical rotation. These techniques serve as the foundation for the synthesis, purification, and characterization of products from microscale syntheses integrated with CHEM 2311. "
       CHEM 2313: "Focuses on additional functional group chemistry including alcohols, ethers, carbonyl compounds, and amines, and also examines chemistry relevant to molecules of nature. Introduces spectroscopic methods for structural identification."
       CHEM 2314: "Basic laboratory techniques from CHEM 2312 are applied to chemical reactions of alcohols, ethers, carbonyl compounds, carbohydrates, and amines. Introduces basic laboratory techniques including infrared (IR) spectroscopy and nuclear magnetic resonance (NMR) spectronomy as analytical methods for characterization of organic molecules."
       }, 
-      \ctt{Physical Chemistry$^\dag$}{CHEM 3431: "Survey of physical chemistry; emphasizes applications in modern research, including examples from biochemistry. Topics include the laws of thermodynamics and their molecular interpretation; equilibrium in chemical and biochemical systems; molecular transport; kinetics, including complex-enzyme mechanisms; and an introduction to spectroscopy." 
+      \ctt{Physical Chemistry}{CHEM 3431: "Survey of physical chemistry; emphasizes applications in modern research, including examples from biochemistry. Topics include the laws of thermodynamics and their molecular interpretation; equilibrium in chemical and biochemical systems; molecular transport; kinetics, including complex-enzyme mechanisms; and an introduction to spectroscopy." 
       CHEM 3432: "Covers practical skills in physical chemistry with an emphasis on current practice in chemistry, biochemistry, and pharmaceutical science. Introduces both ab initio and biological molecular modeling, differential scanning calorimetry, protein unfolding and protein/ligand binding, and electronic absorption spectroscopy." },
-      \ctt{Analytical Chemistry*$^\dag$}{CHEM 2321: "Introduces the principles and practices in the field of analytical chemistry. Focuses on development of a quantitative understanding of homogeneous and heterogeneous equilibria phenomena as applied to acid-base and complexometric titrations, rudimentary separations, optical spectroscopy, electrochemistry, and statistics."
+      \ctt{Analytical Chemistry}{CHEM 2321: "Introduces the principles and practices in the field of analytical chemistry. Focuses on development of a quantitative understanding of homogeneous and heterogeneous equilibria phenomena as applied to acid-base and complexometric titrations, rudimentary separations, optical spectroscopy, electrochemistry, and statistics."
       CHEM 2322: "Lab experiments provide hands-on experience in the analytical methods introduced in CHEM 2321, specifically, silver chloride gravimetry, complexometric titrations, acid-base titrations, UV-vis spectroscopy, cyclic voltammetry, Karl Fischer coulometry, and modern chromatrographic methods."},
-      \ctt{Quantum Chemistry$^\dag$}{CHEM 3403: "Studies the theory of quantum chemistry with applications to spectroscopy. Presents some simple quantum mechanical (QM) models, including the particle in a box, rigid rotor, and harmonic oscillator, followed by treatments of electrons in atoms and molecules. Microwave, infrared, Raman, NMR, ESR, atomic absorption, atomic emission, and UV-Vis spectroscopy are discussed in detail."
+      \ctt{Quantum Chemistry}{CHEM 3403: "Studies the theory of quantum chemistry with applications to spectroscopy. Presents some simple quantum mechanical (QM) models, including the particle in a box, rigid rotor, and harmonic oscillator, followed by treatments of electrons in atoms and molecules. Microwave, infrared, Raman, NMR, ESR, atomic absorption, atomic emission, and UV-Vis spectroscopy are discussed in detail."
       CHEM 3404: "Accompanies CHEM 3403. Explores the principles covered in CHEM 3403 by laboratory experimentation. Experiments include measurement of reaction kinetics, such as excited state dynamics, measurement of gas transport properties, atomic and molecular absorption and emission spectroscopy, infrared spectroscopy of molecular vibrations, and selected applications of fluorimetry."}
     }
     \resumeSubItem{Physics}{
-      \ctt{Electronics$^\dag$}{PHYS 2371: "Covers the physics underlying computers and our modern electronic world. Focuses on principles of semiconductor devices (diodes, transistors, integrated circuits, LEDs, photovoltaics); analog techniques (amplification, AC circuits, resonance); digital techniques (binary numbers, NANDs, logic gates, and circuits); electronic subsystems (operational amplifiers, magnetoelectronics, optoelectronics); and understanding commercial electronic equipment. Lab experiments are designed to investigate the properties of discrete and integrated devices and use them to design and build circuits."
+      \ctt{Electronics}{PHYS 2371: "Covers the physics underlying computers and our modern electronic world. Focuses on principles of semiconductor devices (diodes, transistors, integrated circuits, LEDs, photovoltaics); analog techniques (amplification, AC circuits, resonance); digital techniques (binary numbers, NANDs, logic gates, and circuits); electronic subsystems (operational amplifiers, magnetoelectronics, optoelectronics); and understanding commercial electronic equipment. Lab experiments are designed to investigate the properties of discrete and integrated devices and use them to design and build circuits."
       PHYS 2372: "Illustrates topics from the lecture course through various hands-on experimental projects. Covers the process of electronics design from a goal-oriented perspective. Students are expected to consider their own electronics design project and build a prototype device that accomplishes a specific purpose. "},
       \ctt{Quantum Computation and Information}{PHYS/MATH 5352: Uses the eponymous Nielsen \& Chuang textbook, covering all but the chapter on physical realization of quantum computers. "Introduces the foundations of quantum computation and information, including finite dimensional quantum mechanics, gates and circuits, quantum algorithms, quantum noise, and error-correcting codes." },
       \ctt{Modern Physics}{PHYS 2303: Covered special relativity, relativistic dynamics, wave-particle duality, uncertainty, history of atomic models, particle in a box, harmonic oscillators, solutions to Schrodinger's equation with steps and barriers, the hydrogen atom, fine structure, Zeeman effect, and spectral lines. Used Mathematica to derive computational solutions. }
     }
   \resumeSubHeadingListEnd
 
-  \section{Projects}%\small\headingcap{* = in progress}}
-  \resumeSubHeadingListStart \resumeSubheading{LUCAS}{\ghlink{lucas-demo-screenshots}}{ReactTS, MongoDB, Azure, \href{
-  https://rjsf-team.github.io/react-jsonschema-form/docs/}{\faIcon{link}RJSF}, \href{
-  https://developers.google.com/blockly}{\faIcon{link}Blockly }}{Feb. 2023 --
-  Jun. 2023}{Webapp which enabled drag-and-drop design of forms and data analysis pipelines and graphics. Enabled parsing of files output from a specific machine  to upload multiple documents with same metadata, dimensional analysis in pipelines, linking a sample to the other steps in its history, which could have both branching and merging, and the capability to make graphs and tables, all without (them) coding. \textit{Access to live demo available on request. Written for Nth Cycle.}}
-  \resumeSubheading{ML Excitation Model}{}{Python, Maestro, MATLAB, Bash,
-  TensorFlow}{Aug. 2022 -- Jan. 2023}{Identify what aspects of chloramide,
-  flavins, and styrene influence their excitation wavelengths when they are in
-  proximity to each other. Have written a MATLAB/Python/bash script that transforms
-  the raw coordinates of each atom into more usable and interpretable features,
-  which then can be used as input for a neural network or rounded for use in a
-  neural network to predict excitation wavelengths and strengths. \textit{Completed as part of Sijia Dong Lab.}}
-  \resumeSubheading{Automated Docker}{\ghlink{automated\_docking\_script}}{Python, Schrodinger, Slurm,
-  QtPy}{July 2022}{Designed a GUI add-on and backend script for Schrodinger
-  Maestro that automated a time-consuming and error-prone process of generating
-  docking poses for three molecules in all permutations. \textit{Completed as
-  part of Sijia Dong Lab.}}
-  \resumeSubheading{N-Bullets in Racket}{\ghlink{nbulletsrkt}}{Intermediate Student Language (Racket subset)}{Apr.
+  \section{Projects}
+  \resumeSubheading{CA-DSL}{\href{https://github.com/zedeckj/ca-dsl}{\faIcon{github}/zedeckj/ca-dsl}}{Typed Racket}{Spring 2025}{Co-authored a domain specific language for describing and executing variants of Conway's Game of Life as part of a course in my final semester. Made extensive use of Racket's macro system for terser and more readable syntax, and also made extensive use of parametric polymorphism to maximize extensibility to different variants.}
+  \resumeSubheading{N-Bullets in Racket}{\ghlink{nbulletsrkt}}{Intermediate Student Language (Racket)}{Apr.
   2022} {Rewrote a project for a Java-based course in Racket to compare the two
   languages. Racket was terser, easier to properly test, and (subjectively) more
   readable. Additional findings and opinions are in the README.}
-  \resumeSubheading{Grave Finder}{\ghlink{findagravemiddleborough.ml}}{ReactJS,
-  PHP, MySQL, Cloudflare, cPanel, SSL}{Dec. 2020}{Website to view grave data for
-  a local cemetery preservation nonprofit. Makes use of join tables, searching,
-  filtering, React+MaterialUI forms, and an administrator login with a cooldown
-  period after too many login attempts. } \resumeSubHeadingListEnd
+  \section{Ongoing Learning}
+  \resumeSubheading{Type Theory}{Learning type theory from a textbook which uses Lean to make the theory more concrete.}{\href{https://www.danielgratzer.com/papers/type-theory-book.pdf}{\faIcon{link}}}{}{}
+  \resumeSubheading{Programming Languages}{Following along with a class examining the PL design choices behind JS/TS.}{\href{https://felleisen.org/matthias/4400-f25/index.html}{\faIcon{link}}}{}{}
 %-------------------------------------------
 \end{document}
