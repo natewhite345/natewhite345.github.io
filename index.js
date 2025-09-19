@@ -60,7 +60,7 @@ function resizeViewerWindow(){
     /**
      * Resizes the viewer window to have a height roughly equivalent to one page, assuming the view mode is FIT_WIDTH
      */
-    document.getElementById("adobe-dc-view").style.height = 1.2*+getComputedStyle(document.getElementById("adobe-dc-view")).width.replace("px","")+"px"
+    document.getElementById("adobe-dc-view").style.height = 1.3*+getComputedStyle(document.getElementById("adobe-dc-view")).width.replace("px","")+"px"
 }
 
 /* Wait for Adobe Acrobat Services PDF Embed API to be ready */
@@ -78,10 +78,10 @@ document.addEventListener("adobe_dc_view_sdk.ready", function () {
         showPdf("White_Nathaniel_Transcript.pdf");
     })
     showPdf("White_Nathaniel_Resume.pdf");
-    if (!isMobile) {
-        document.getElementById("tooltip-toast").classList.add("show")
-        setTimeout(() => document.getElementById("tooltip-toast").classList.remove("show"), 3000)
-    }
+    // if (!isMobile) {
+    //     document.getElementById("tooltip-toast").classList.add("show")
+    //     setTimeout(() => document.getElementById("tooltip-toast").classList.remove("show"), 3000)
+    // }
     document.getElementById("resume-tab").classList.add("active-tab");
     resizeViewerWindow();
     window.addEventListener("resize",()=>resizeViewerWindow())
