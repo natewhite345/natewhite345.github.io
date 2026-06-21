@@ -20,7 +20,7 @@ body>* {
     border-bottom-left-radius: -100px;
     padding: 8px;
     font-weight: bold;
-    border: 2px solid #87adde;
+    border: 2px solid #a0d6d3;
     display: inline-flex;
 }
 .tab + .tab {
