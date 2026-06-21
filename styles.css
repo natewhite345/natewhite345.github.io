@@ -44,38 +44,3 @@ button:hover {
 .tab>a:hover {
     color: #87adde
 }
-.toast {
-    position: absolute;
-    height: 0;
-    width: 0;
-}
-.toast-inner {
-    background-color: #333;
-    color: #fff;
-    position: relative;
-    border-radius: 4px;
-    padding: 10px 20px;
-    min-width: max-content;
-    transition: left 0.5s ease-in-out;
-    bottom: -30px;
-    left: -1000px;
-}
-
-/* Position the toast at the bottom of the screen when visible */
-.toast-inner.show{
-    left: 10px;
-}
-
-/* #adobe-dc-view {
-    height: 130vw we have to set this programmatically when it launches
-} */
-
-footer>a{
-    text-align: center;
-    padding: 5px;
-    text-decoration: underline ;
-    color: darkblue;
-    display: block;
-    margin: 0 auto;
-    cursor: pointer;
-}
