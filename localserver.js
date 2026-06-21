@@ -12,6 +12,7 @@ const server = http.createServer((req, res) => {
     let contentType = (()=>{switch(true) {
         case url.endsWith(".pdf"): return "application/pdf"
         case url.endsWith(".html"): return "text/html"
+        case url.endsWith(".css"): return "text/css"
         default: return "text/plain"
     }})()
     try{
